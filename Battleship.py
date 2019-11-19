@@ -7,28 +7,6 @@ Created on Thu Nov  7 13:47:13 2019
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-class Vehicle():
-    def __init__(self, n):
-        self.wheels = n
-        
-    def get_number_wheels(self):
-        print('number of wheels:',self.wheels)
-        
-
-class Person():
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        
-    def myfunc(obj):
-        print('Hello! My name is ' + obj.name + '.\nI am ' , obj.age , 'years old.')
-
-        
-#info = input('What is your name and age (e.g.: Doggo 3)? ')
-#info = info.split()
-#p1 = Person(info[0], info[1])
-#p1.myfunc()
 table_size = 5
 battle_points = 12
 
