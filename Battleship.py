@@ -1,12 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Nov  7 13:47:13 2019
-
-@author: Coteo
-"""
-import numpy as np
-import matplotlib.pyplot as plt
-
 table_size = 5
 battle_points = 12
 
@@ -32,7 +23,7 @@ class Player():
         count = 0
         while count < self.player_ships:
             try:
-                x_y_coord = input('Enter the horizontal coordinate: ')
+                x_y_coord = input('Enter the coordinates (x,y), e.g. 0 1: ')
                 x_coord = int(x_y_coord.split()[0])
                 y_coord = int(x_y_coord.split()[1])
                 ship_type = input('Enter the class of the ship: ').capitalize()
@@ -64,7 +55,7 @@ class Player():
     def shoot(self, x, y, seamap):
         '''don't forget a docstring...'''
         if seamap[x][y] != 0:
-            self.player_score += seamap[x][y]
+            self.record(seamap[x][y])
             seamap[x][y] = 2
             return True
         else:
@@ -96,8 +87,9 @@ class Player():
                     index = False
             
             
-    def record(self):
-        '''don't forget a docstring...'''        
+    def record(self, points):
+        '''don't forget a docstring...'''
+        self.player_score += points
         pass
 
 ask_play = input('Do you want to play? ')
@@ -150,11 +142,3 @@ axarr[0].imshow(player1.display_map())
 axarr[1].imshow(player2.display_map())
 axarr[0].set_title('Player 1 Map')
 axarr[1].set_title('Player 2 Map')
-    
-    
-    
-    
-    
-    
-    
-    
